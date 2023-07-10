@@ -29,7 +29,7 @@
   <body
     class="relative font-ubuntu bg-magnolia flex flex-col md:flex-row md:justify-center md:items-center md:min-h-screen md:mx-auto md:max-w-[61rem]"
   >
-    <!-------------------------------- HEADER SECTION ---------------------------------------->
+    <!-- HEADER SECTION  -->
     <header class="relative md:flex">
       <div
         class="bg__header md:bg-white md:p-4 md:rounded-bl-xl md:rounded-tl-xl"
@@ -57,7 +57,7 @@
             <span>1</span>
           </button>
           <ul class="btn__details text-white uppercase max-md:hidden">
-            <li class="text-[0.75rem] text-[color:var(--lightGray)]">step 1</li>
+            <li class="text-">step 1</li>
             <li class="text-[0.89rem] tracking-wider font-semibold">
               your info
             </li>
@@ -72,7 +72,7 @@
             <span>2</span>
           </button>
           <ul class="btn__details text-white uppercase max-md:hidden">
-            <li class="text-[0.75rem] text-[color:var(--lightGray)]">step 2</li>
+            <li class="text-">step 2</li>
             <li class="text-[0.89rem] tracking-wider font-semibold">
               select plan
             </li>
@@ -87,7 +87,7 @@
             <span>3</span>
           </button>
           <ul class="btn__details text-white uppercase max-md:hidden">
-            <li class="text-[0.75rem] text-[color:var(--lightGray)]">step 3</li>
+            <li class="text-">step 3</li>
             <li class="text-[0.89rem] tracking-wider font-semibold">add ons</li>
           </ul>
         </div>
@@ -100,21 +100,21 @@
             <span>4</span>
           </button>
           <ul class="btn__details text-white uppercase max-md:hidden">
-            <li class="text-[0.75rem] text-[color:var(--lightGray)]">step 4</li>
+            <li class="text-">step 4</li>
             <li class="text-[0.89rem] tracking-wider font-semibold">summary</li>
           </ul>
         </div>
       </div>
     </header>
 
-    <!-------------------------------- MAIN SECTION ---------------------------------------->
+    <!-- MAIN SECTION  -->
 
     <main
       class="relative flex justify-center items-center md:flex-1 md:h-[37rem]"
     >
       <!-- Step-1  -->
       <section
-        id="card card1 loader"
+        id="card"
         class="card text-[color:var(--marineBlue)] card1 personal-info h-[38rem] w-[93vw] bg-white px-[var(--pxclamp1)] py-[var(--pyclamp1)] rounded-xl absolute -top-[4.5rem] md:static md:w-full md:h-full md:rounded-tl-none md:rounded-bl-none"
       >
         <div class="main__content">
@@ -202,7 +202,6 @@
                 <button
                   class="next text-white bg-[color:var(--marineBlue)] rounded-md py-3 px-[var(--pxclamp2)] transition-all ease-in-out duration-200 hover:opacity-90"
                   type="submit"
-                  text-[color:var(--lightGray)]
                 >
                   Next Step
                 </button>
@@ -214,7 +213,7 @@
 
       <!-- Step-2 -->
       <section
-        id="card card2"
+        id="card"
         class="card text-[color:var(--marineBlue)] card2 select-plan h-[38rem] w-[93vw] bg-white px-[var(--pxclamp1)] py-[var(--pyclamp1)] md:px-[5.5rem] md:py-14 rounded-xl absolute -top-[4.5rem] md:static md:w-full md:h-full md:rounded-tl-none md:rounded-bl-none hidden"
       >
         <div class="main__content">
@@ -379,7 +378,7 @@
 
       <!-- Step-3 -->
       <section
-        id="card card3"
+        id="card"
         class="card text-[color:var(--marineBlue)] card3 pick__add-ons h-[38rem] w-[93vw] bg-white px-[var(--pxclamp1)] py-[var(--pyclamp1)] md:px-[5.5rem] md:py-14 rounded-xl absolute -top-[4.5rem] md:static md:w-full md:h-full md:rounded-tl-none md:rounded-bl-none hidden"
       >
         <div class="main__content">
@@ -527,7 +526,7 @@
 
       <!-- Step-4 -->
       <section
-        id="card card4"
+        id="card"
         class="card text-[color:var(--marineBlue)] card4 finishing-up h-[38rem] w-[93vw] bg-white px-[var(--pxclamp1)] py-[var(--pyclamp1)] md:px-[5.5rem] md:py-14 rounded-xl absolute -top-[4.5rem] md:static md:w-full md:h-full md:rounded-tl-none md:rounded-bl-none hidden"
       >
         <div class="main__content">
@@ -552,6 +551,7 @@
                     <p></p>
                     <div
                       class="change text-sm text-[color:var(--coolGray)] underline hover:text-[var(--purplishBlue)] cursor-pointer"
+                      type="button"
                     >
                       Change
                     </div>
@@ -606,7 +606,7 @@
 
       <!-- Thank You Card -->
       <section
-        id="card card5"
+        id="card"
         class="card text-[color:var(--marineBlue)] card5 thank-you h-[29.875rem] w-[93vw] bg-white flex justify-center items-center px-4 py-7 md:px-[5.5rem] md:py-14 rounded-xl absolute -top-[4.5rem] md:static md:w-full md:h-full md:rounded-tl-none md:rounded-bl-none hidden"
       >
         <div
