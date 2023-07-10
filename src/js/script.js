@@ -7,7 +7,9 @@ const back = document.querySelectorAll(".back"),
   errorText = document.querySelectorAll(".error-txt") /*red color error text*/,
   emailPattern =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-  validation = ["Cannot leave Empty", "Invalid Email"],
+  // Regular expression to check if string is a Indian mobile number
+  phoneNumberPattern = /^[6-9]\d{9}$/gi,
+  validation = ["Cannot leave Empty", "Invalid Email", "Invalid Phone Number"],
   monthlyPlanPricing = ["$6/mo", "$8/mo", "$12/mo"],
   yearlyPlanPricing = ["$80/yr", "$100/yr", "$150/yr"],
   monthlyAddOnPricing = ["$2/mo", "$3/mo", "$4/mo"],
@@ -28,8 +30,9 @@ const back = document.querySelectorAll(".back"),
   changePlan = document.querySelector(".change");
 
 let checkedOrNot = true,
-  isNameValidate = false,
-  isEmailValidate = false;
+  isNameValid = false,
+  isEmailValid = false,
+  isphoneNumberValid = false;
 
 // Toggle handling
 for (let i = 0; i < monthlyPlanPrice.length; i++) {
@@ -58,7 +61,9 @@ form[0].addEventListener("submit", (e) => {
   e.preventDefault();
   namevalidation();
   emailValidation();
-  if (isNameValidate && isEmailValidate) {
+  phoneNumberValidation();
+
+  if (isNameValid && isEmailValid && isphoneNumberValid) {
     nextStep(0);
   }
 });
@@ -118,11 +123,11 @@ function namevalidation() {
     input[0].classList.add("error");
     errorText[0].classList.add("error");
     errorText[0].textContent = validation[0];
-    isNameValidate = false;
+    isNameValid = false;
   } else {
     input[0].classList.remove("error");
     errorText[0].classList.remove("error");
-    isNameValidate = true;
+    isNameValid = true;
   }
 }
 function emailValidation() {
@@ -130,19 +135,36 @@ function emailValidation() {
     input[1].classList.add("error");
     errorText[1].classList.add("error");
     errorText[1].textContent = validation[0];
-    isEmailValidate = false;
+    isEmailValid = false;
   } else if (!input[1].value.match(emailPattern)) {
     input[1].classList.add("error");
     errorText[1].classList.add("error");
     errorText[1].textContent = validation[1];
-    isEmailValidate = false;
+    isEmailValid = false;
   }
 
   // Else part
   else {
     input[1].classList.remove("error");
     errorText[1].classList.remove("error");
-    isEmailValidate = true;
+    isEmailValid = true;
+  }
+}
+function phoneNumberValidation() {
+  if (input[2].value === "") {
+    input[2].classList.add("error");
+    errorText[2].classList.add("error");
+    errorText[2].textContent = validation[0];
+    isphoneNumberValid = false;
+  } else if (!input[2].value.match(phoneNumberPattern)) {
+    input[2].classList.add("error");
+    errorText[2].classList.add("error");
+    errorText[2].textContent = validation[2];
+    isphoneNumberValid = false;
+  } else {
+    input[2].classList.remove("error");
+    errorText[2].classList.remove("error");
+    isphoneNumberValid = true;
   }
 }
 function getsecondAndThirdFormData() {
