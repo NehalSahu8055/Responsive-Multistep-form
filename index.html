@@ -166,12 +166,11 @@
               <!-- Phone Number -->
               <div class="flex flex-col-reverse py-2.5 gap-2">
                 <input
-                  class="tel text-[color:var(--purplishBlue)] placeholder:text-[color:var(--coolGray)] border-[1px] border-[color:var(--lightGray)] px-4 py-2 text-sm rounded-md focus:outline-2 focus:outline-sky-600 focus:outline-dotted"
+                  class="tel text-[color:var(--purplishBlue)] placeholder:text-[color:var(--coolGray)] border-[1px] border-[color:var(--lightGray)] px-4 py-2 text-sm rounded-md focus:outline-2 focus:outline-sky-600 focus:outline-dotted hover:cursor-[url('/assets/images/india-flag-icon.svg'),_pointer] error-border"
                   type="tel"
                   name="mob-no"
                   id="mob-number"
-                  placeholder="eg. +91 987 654 321"
-                  pattern="[+]{1}[0-9]{11,14}"
+                  placeholder="eg. +91 987 654 321 (Indian Number supported)"
                   required
                   maxlength="10"
                   autocomplete="tel"
@@ -180,7 +179,7 @@
                   class="flex items-baseline justify-between"
                   for="mob-number"
                 >
-                  <p>Phone Number</p>
+                  <p>Phone Number <span aria-label="required">*</span></p>
                   <div
                     class="error-txt text-xs text-[var(--strawberryRed)] italic hidden"
                   ></div>
