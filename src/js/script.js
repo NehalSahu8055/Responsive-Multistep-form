@@ -7,8 +7,6 @@ const back = document.querySelectorAll(".back"),
   errorText = document.querySelectorAll(".error-txt") /*red color error text*/,
   emailPattern =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-  // Regular expression to check if string is a Indian mobile number
-  phoneNumberPattern = /^[6-9]\d{9}$/gi,
   validation = ["Cannot leave Empty", "Invalid Email", "Invalid Phone Number"],
   monthlyPlanPricing = ["$6/mo", "$8/mo", "$12/mo"],
   yearlyPlanPricing = ["$80/yr", "$100/yr", "$150/yr"],
@@ -27,7 +25,13 @@ const back = document.querySelectorAll(".back"),
   selectedAddOnPrice = document.querySelector(".selected__add-on-price"),
   totalCost = document.querySelector(".total-cost"),
   totalDuration = document.querySelector(".total-duration"),
-  changePlan = document.querySelector(".change");
+  changePlan = document.querySelector(".change"),
+  // handles number validation by plugin
+  iti = window.intlTelInput(input[2], {
+    initialCountry: "in",
+    utilsScript:
+      "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+  });
 
 let checkedOrNot = true,
   isNameValid = false,
@@ -151,12 +155,13 @@ function emailValidation() {
   }
 }
 function phoneNumberValidation() {
+  isphoneNumberValid = iti.isValidNumber() == true ? true : false;
   if (input[2].value === "") {
     input[2].classList.add("error");
     errorText[2].classList.add("error");
     errorText[2].textContent = validation[0];
     isphoneNumberValid = false;
-  } else if (!input[2].value.match(phoneNumberPattern)) {
+  } else if (!isphoneNumberValid && input[2] !== "") {
     input[2].classList.add("error");
     errorText[2].classList.add("error");
     errorText[2].textContent = validation[2];
