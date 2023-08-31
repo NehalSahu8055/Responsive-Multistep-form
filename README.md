@@ -3,18 +3,6 @@
 This is a solution to the [Multistep form component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa).
 
 
-### Screenshot
-🖥️ Desktop View
-
-![](./design/desktop-preview.jpg)
-
-📱 Mobile View
-
-![](./design/mobile-design-step-1.jpg)
-
-
-
-
 ### Links
 
 - Solution URL: [Click here](https://github.com/NehalSahu8055/Responsive-Multistep-form)
